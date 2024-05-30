@@ -14,6 +14,7 @@ public class PickUp : MonoBehaviour
         var log = gameObject.GetComponent<Log>();
         var stick = gameObject.GetComponent<Stick>();
         var stone = gameObject.GetComponent<Stone>();
+        var goldSword = gameObject.GetComponent<GoldSword>();
         if (log != null)
         {
             id = 1;
@@ -25,6 +26,10 @@ public class PickUp : MonoBehaviour
         else if (stone != null)
         {
             id = 3;
+        }
+        else if (goldSword != null)
+        {
+            id = 4;
         }
 
     }

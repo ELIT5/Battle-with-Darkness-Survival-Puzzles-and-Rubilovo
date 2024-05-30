@@ -15,6 +15,7 @@ public class BossII : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveVector;
     public bool isPlayerVisible;
+    public Camera winCamera;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -26,6 +27,8 @@ public class BossII : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
+            winCamera.GetComponent<Camera>().enabled = true;
+            winCamera.GetComponentInChildren<Canvas>().enabled = true;
             Destroy(gameObject);
         }
         if (isPlayerVisible)
